@@ -1,0 +1,69 @@
+1. For the given JSON iterate over all for loops(for,for in,for of,foreach)
+
+var loops=new XMLHttpRequest();
+loops.open('GET','https://restcountries.com/v3.1/all')
+loops.send();
+loops.onload= function()
+{
+var data=loops.response
+var x= JSON.parse(data);
+console.log(x);
+
+// for loop
+for(var i=0;i<x.length;i++){
+console.log(x[i].capital)
+}
+
+// for in loop
+for (var a in x){
+console.log(x[a].continents)
+}
+
+// for of loop
+for (var b of x){
+console.log(b.currencies);
+}
+}
+
+// for each loop
+var arr=[1,2,3,4,5,6,7,8];
+arr.forEach(myFunc)
+function myFunc(item,index){
+console.log(item,index)
+}
+            
+
+2.Create your own resume data in JSON format
+
+var resume=  {
+        "Basic Details": [{
+            "First Name":"Swathi",
+            "Last Name":"Venkatasubramanian",
+            "DOB": "07.09.1997",
+            "Address": "231 East Street",
+            "Phone":"1234567890",
+            "Email":"swathivs1406@gmail.com"
+        }],
+        "Education Qualification": [
+            {
+            "Degree":"B.E",
+            "Department":"CSE",
+            "Year of passed out":"2019",
+            "CGPA":"7.1",
+            "College":"PSNA College of Engineering and Technology"
+        }],
+        "Experience":[{
+            "Company":"Iscientific Pte Ltd",
+            "Role":"Technical Support admin",
+            "Years of experience":"1.9"
+        }],
+        "Skills": [{
+            "Language": '["c,c++,JavaScript"]',
+            "others":"Digital Marketing"
+        }],
+        "Hobbies": [{
+            "Activities":"Reading books",
+            "Games":"Throw ball"
+        }]
+    }
+        console.log(resume);
